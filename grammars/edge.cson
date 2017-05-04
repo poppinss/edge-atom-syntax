@@ -1,0 +1,77 @@
+'scopeName': 'text.html.edge'
+'name': 'Edge'
+'fileTypes': ['.edge'],
+'injections':
+  'text.html.edge - (meta.embedded | meta.tag | comment.block.edge), L:(text.html.edge meta.tag - comment.block.edge), L:(source.js.embedded.html - comment.block.edge)':
+    'patterns': [
+      {
+        'begin': '@raw'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.edge'
+        'end': '@endraw'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.edge'
+        'name': 'comment.block.edge'
+      },
+      {
+        'match': '\\s*@debugger|\\s*@super'
+        'name': 'support.function.construct.begin.edge'
+      },
+      {
+        'begin': '^\\s*(@(!)?\\w+)\\('
+        'beginCaptures':
+          1:
+            'name': 'keyword.edge'
+        'end': '(?<=\\))(?!.*\\))'
+        'contentName': 'source.js.edge'
+        'patterns': [{
+          'include': 'source.js'
+        }]
+      },
+      {
+        'match': '^\\s*(@(!)?\\w+)'
+        'name': 'keyword.edge'
+      },
+      {
+        'begin': '{{--'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.edge'
+        'end': '--}}'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.edge'
+        'name': 'comment.block.edge'
+      },
+      {
+        'begin': '{{2,3}'
+        'beginCaptures':
+          '0':
+            'name': 'entity.name.tag.edge'
+        'end': '}{2,3}'
+        'endCaptures':
+          '0':
+            'name': 'entity.name.tag.edge'
+        'contentName': 'source.js.edge'
+        'patterns': [{
+          'include': 'source.js'
+        }]
+      },
+      {
+        'begin': '@{{2,3}'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.edge'
+        'end': '}{2,3}'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.edge'
+      }
+    ]
+'patterns': [
+  {
+    'include': 'text.html.basic'
+  }
+]

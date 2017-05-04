@@ -1,0 +1,46 @@
+'.text.html.edge':
+  '{{-- comment --}}':
+    'prefix': 'com'
+    'body': '{{-- $1 --}}$0'
+  '@include()':
+    'prefix': 'inc'
+    'body': '''@include('${1:partials.${2:partial}}')'''
+  '@layout()':
+    'prefix': 'lay'
+    'body': '''@layout('${1:layouts.${2:master}}')'''
+  '@component()':
+    'prefix': 'com'
+    'body': '''@component('${1:components.${2:name}}')\n  $3\n@endcomponent'''
+  '@inline-component()':
+    'prefix': 'com!'
+    'body': '''@!component('${1:components.${2:name}}')'''
+  '@section()':
+    'prefix': 'sec'
+    'body': '''@section('${1:name}')\n  $2\n@endsection'''
+  '@inline-section()':
+    'prefix': 'sec!'
+    'body': '''@!section('${1:name}')'''
+  '@if()':
+    'prefix': 'if'
+    'body': '''@if(${1:condition})\n  $2\n@endif'''
+  '@if-else()':
+    'prefix': 'elif'
+    'body': '''@if(${1:condition})\n  $2\n@else\n  $3\n@endif'''
+  '@if-elseif()':
+    'prefix': 'eleif'
+    'body': '''@if(${1:condition})\n  $2\n@elseif(${3:condition})\n  $4\n@endif'''
+  '@each()':
+    'prefix': 'each'
+    'body': '''@each(${1:row} in ${2:rows})\n  $3\n@endeach'''
+  '@each-include()':
+    'prefix': 'each!'
+    'body': '''@!each(${1:row} in ${2:rows}, include = '$3')'''
+  '@debugger()':
+    'prefix': 'deb'
+    'body': '''@debugger'''
+  '@super()':
+    'prefix': 'sup'
+    'body': '''@super'''
+  '@raw()':
+    'prefix': 'raw'
+    'body': '''@raw\n  $1\n@endraw'''

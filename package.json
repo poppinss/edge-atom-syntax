@@ -1,0 +1,16 @@
+{
+  "name": "edge",
+  "main": "./lib/edge",
+  "version": "1.0.0",
+  "description": "Syntax highlighter for Edge templates",
+  "keywords": ["edge", "adonisjs", "templating"],
+  "activationCommands": {
+    "atom-workspace": "edge:toggle"
+  },
+  "repository": "https://github.com/poppinss/edge-atom-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}

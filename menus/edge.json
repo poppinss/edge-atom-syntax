@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle edge",
+        "command": "edge:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "edge",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "edge:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
