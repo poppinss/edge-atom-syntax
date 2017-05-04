@@ -1,6 +1,6 @@
 'scopeName': 'text.html.edge'
 'name': 'Edge'
-'fileTypes': ['.edge'],
+'fileTypes': ['edge'],
 'injections':
   'text.html.edge - (meta.embedded | meta.tag | comment.block.edge), L:(text.html.edge meta.tag - comment.block.edge), L:(source.js.embedded.html - comment.block.edge)':
     'patterns': [
